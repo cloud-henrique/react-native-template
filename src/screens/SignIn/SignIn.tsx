@@ -1,17 +1,9 @@
-import { ReactNode } from 'react';
-import { Text } from 'react-native';
+import { SignInContainer, Title } from './SignIn.styles'
 
-import { Container } from './SignIn.styles';
-
-interface SignInProps {
-  children: ReactNode;
-}
-
-export function SignIn({ children }: SignInProps) {
+export function SignIn() {
   return (
-    <Container>
-      <Text>SignIn</Text>
-      {children}
-    </Container>
-  );
+    <SignInContainer>
+      <Title>SignIn</Title>
+    </SignInContainer>
+  )
 }
