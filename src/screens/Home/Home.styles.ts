@@ -1,5 +1,7 @@
-import styled from 'styled-components/native';
+import styled from 'styled-components/native'
 
-export const Container = styled.View`
+export const HomeContainer = styled.View``
 
-`;
+export const Title = styled.Text`
+  font-family: 'Roboto-400';
+`
