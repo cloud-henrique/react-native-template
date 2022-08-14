@@ -2,8 +2,10 @@ import React from 'react'
 
 import { useFonts } from 'expo-font'
 import { StatusBar } from 'expo-status-bar'
+import { ThemeProvider } from 'styled-components/native'
 
 import { Routes } from './routes'
+import { theme } from './styles/theme'
 
 export function App() {
   const [loaded] = useFonts({
@@ -18,9 +20,9 @@ export function App() {
   if (!loaded) return null
 
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <StatusBar backgroundColor='transparent' style='auto' translucent />
       <Routes />
-    </>
+    </ThemeProvider>
   )
 }
