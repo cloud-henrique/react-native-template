@@ -15,9 +15,9 @@ export default {
     success_light: '#36b37e',
     success_dark: '#006644',
 
-    warning: '#ffab00',
+    warning: '#ff991f',
     warning_light: '#ffc400',
-    warning_dark: '#ff991f',
+    warning_dark: '#d27200',
 
     danger: '#de350b',
     danger_light: '#ff5630',
