@@ -26,7 +26,7 @@ export const Container = styled.TouchableOpacity<ContainerProps>`
     outline ? (disabled ? `1px solid ${theme.colors.disable}` : `1px solid ${theme.colors[type]}`) : 'none'};
   border-radius: 8px;
   flex-direction: row;
-  height: 40px;
+  height: 56px;
   justify-content: center;
   padding: 0px 16px;
   width: ${({ flex }) => (flex ? '100%' : 'auto')};
@@ -36,7 +36,7 @@ export const Text = styled.Text<MyTextProps>`
   color: ${({ theme, disabled, outline, type = 'primary' }) =>
     disabled ? theme.colors.subtext : outline ? theme.colors[type] : theme.colors.white};
   font-family: ${({ theme }) => theme.fonts[500]};
-  font-size: ${({ theme }) => theme.sizing[16]};
+  font-size: ${({ theme }) => theme.sizing[18]};
   margin-left: ${({ leftIcon }) => (!!leftIcon ? '4px' : '0px')};
   margin-right: ${({ rightIcon }) => (!!rightIcon ? '4px' : '0px')};
   text-transform: ${({ uppercase }) => (uppercase ? 'uppercase' : 'none')};
