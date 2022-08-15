@@ -10,5 +10,5 @@ export const SignInContainer = styled.View`
 export const Title = styled.Text`
   color: ${({ theme }) => theme.colors.text};
   font-family: ${({ theme }) => theme.fonts[700]};
-  font-size: ${({ theme }) => theme.sizes[24]};
+  font-size: ${({ theme }) => theme.sizing[24]};
 `

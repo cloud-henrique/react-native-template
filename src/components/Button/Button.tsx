@@ -1,7 +1,7 @@
 import { ActivityIndicator } from 'react-native'
 import { MaterialCommunityIcons as Icon } from '@expo/vector-icons'
+import { useTheme } from 'styled-components'
 
-import theme from '@styles/theme'
 import { ButtonProps } from './types'
 import { Container, Text } from './Button.styles'
 
@@ -17,6 +17,8 @@ export function Button({
   uppercase,
   onPress,
 }: ButtonProps) {
+  const theme = useTheme()
+
   if (isLoading) {
     return (
       <Container>

@@ -1,13 +1,20 @@
 import React from 'react'
+import { useColorScheme } from 'react-native'
 
 import { useFonts } from 'expo-font'
 import { StatusBar } from 'expo-status-bar'
 import { ThemeProvider } from 'styled-components/native'
 
 import { Routes } from './src/routes'
-import theme from './src/styles/theme'
+import themes from './src/themes'
 
 export function App() {
+  const deviceTheme = useColorScheme() || 'dark'
+
+  const theme = themes[deviceTheme]
+
+  const statusBarColor = deviceTheme === 'dark' ? 'light' : 'dark'
+
   const [loaded] = useFonts({
     'Roboto-100': require('./src/assets/fonts/Roboto-Thin.ttf'),
     'Roboto-300': require('./src/assets/fonts/Roboto-Light.ttf'),
@@ -21,8 +28,10 @@ export function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <StatusBar backgroundColor='transparent' style='auto' translucent />
-      <Routes />
+      <>
+        <StatusBar backgroundColor='transparent' style={statusBarColor} translucent />
+        <Routes />
+      </>
     </ThemeProvider>
   )
 }

@@ -36,7 +36,7 @@ export const Text = styled.Text<MyTextProps>`
   color: ${({ theme, disabled, outline, type = 'primary' }) =>
     disabled ? theme.colors.subtext : outline ? theme.colors[type] : theme.colors.white};
   font-family: ${({ theme }) => theme.fonts[500]};
-  font-size: ${({ theme }) => theme.sizes[16]};
+  font-size: ${({ theme }) => theme.sizing[16]};
   margin-left: ${({ leftIcon }) => (!!leftIcon ? '4px' : '0px')};
   margin-right: ${({ rightIcon }) => (!!rightIcon ? '4px' : '0px')};
   text-transform: ${({ uppercase }) => (uppercase ? 'uppercase' : 'none')};
