@@ -7,9 +7,8 @@ export default {
     background: '#383b43',
 
     primary: '#00B37E',
-    // primary: '#0052cc',
-    primary_light: '#0065ff',
-    primary_dark: '#0747a6',
+    primary_light: '#36b37e',
+    primary_dark: '#006644',
 
     success: '#00875a',
     success_light: '#36b37e',

@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Keyboard, Platform } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
 
 import { Input } from '@components/Input'
 import { Button } from '@components/Button'
@@ -9,6 +10,12 @@ import { SignInContainer, Logo, Content, FormContainer, Label, LabelText, Title,
 export function SignIn() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+
+  const navigation = useNavigation()
+
+  function handleOpenHomeScreen() {
+    navigation.navigate('Home')
+  }
 
   return (
     <SignInContainer>
@@ -26,7 +33,7 @@ export function SignIn() {
             <LabelText>Password</LabelText>
             <Input value={password} placeholder='Password' onChangeText={setPassword} password />
           </Label>
-          <Button text='Sign in' rightIcon='login' />
+          <Button text='Sign in' rightIcon='login' onPress={handleOpenHomeScreen} />
         </FormContainer>
       </Content>
     </SignInContainer>

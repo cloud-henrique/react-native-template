@@ -1,11 +1,18 @@
 import { Button } from '@components/Button'
+import { useNavigation } from '@react-navigation/native'
 import { HomeContainer, Title } from './Home.styles'
 
 export function Home() {
+  const navigation = useNavigation()
+
+  function handleOpenSignInScreen() {
+    navigation.navigate('SignIn')
+  }
+
   return (
     <HomeContainer>
       <Title>Button Variants</Title>
-      <Button text='Primary' type='primary' />
+      <Button text='Primary' type='primary' onPress={handleOpenSignInScreen} />
       <Button text='Success' type='success' />
       <Button text='Danger' type='danger' />
       <Button text='Warning' type='warning' />

@@ -6,10 +6,9 @@ export default {
   colors: {
     background: '#f3f2f8',
 
-    // primary: '#0052cc',
     primary: '#00B37E',
-    primary_light: '#0065ff',
-    primary_dark: '#0747a6',
+    primary_light: '#36b37e',
+    primary_dark: '#006644',
 
     success: '#00875a',
     success_light: '#36b37e',
