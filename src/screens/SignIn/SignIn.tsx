@@ -1,8 +1,10 @@
-import { Button } from '@components/Button'
-import { Input } from '@components/Input'
 import { useState } from 'react'
 import { Keyboard, Platform } from 'react-native'
-import { SignInContainer, Logo, Content, FormContainer, Label, LabelText } from './SignIn.styles'
+
+import { Input } from '@components/Input'
+import { Button } from '@components/Button'
+
+import { SignInContainer, Logo, Content, FormContainer, Label, LabelText, Title, LogoContainer } from './SignIn.styles'
 
 export function SignIn() {
   const [email, setEmail] = useState('')
@@ -12,7 +14,10 @@ export function SignIn() {
     <SignInContainer>
       <Content onPress={Keyboard.dismiss}>
         <FormContainer behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
-          <Logo />
+          <LogoContainer>
+            <Logo />
+            <Title>React Native Boilerplate</Title>
+          </LogoContainer>
           <Label>
             <LabelText>E-mail</LabelText>
             <Input value={email} placeholder='E-mail' onChangeText={setEmail} icon='email' />

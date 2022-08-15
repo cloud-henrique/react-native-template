@@ -6,8 +6,8 @@ export default {
   colors: {
     background: '#383b43',
 
-    // primary: '#0052cc',
     primary: '#00B37E',
+    // primary: '#0052cc',
     primary_light: '#0065ff',
     primary_dark: '#0747a6',
 
