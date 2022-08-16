@@ -1,6 +1,6 @@
-# React Native Boilerplate
+# ⚛️ React Native Boilerplate
 
-This repository contains a basic set to init a React Native project (at least for me :wink:)
+This repository contains a personal basic set to init a bare React Native project with Expo and TypeScript.
 
 ![App cover showing their light and dark mode](public/cover.png)
 
@@ -14,3 +14,4 @@ This repository contains a basic set to init a React Native project (at least fo
 - [x] [styled-components](https://styled-components.com)
 - [x] Dark and Light theme
 - [x] `Button` and `Input` components
+- [ ] Internationalization ([i18n-js](https://www.npmjs.com/package/i18n-js))
