@@ -19,6 +19,13 @@ export function Button({
 }: ButtonProps) {
   const theme = useTheme()
 
+  function setIconColor() {
+    if (disabled) return theme.colors.subtext
+    if (outline) return theme.colors[type]
+
+    return theme.colors.white
+  }
+
   if (isLoading) {
     return (
       <Container>
@@ -29,13 +36,7 @@ export function Button({
 
   return (
     <Container disabled={disabled} flex={flex} outline={outline} type={type} onPress={onPress} activeOpacity={0.7}>
-      {leftIcon && (
-        <Icon
-          name={leftIcon}
-          size={24}
-          color={disabled ? theme.colors.subtext : outline ? theme.colors[type] : theme.colors.white}
-        />
-      )}
+      {leftIcon && <Icon name={leftIcon} size={24} color={String(setIconColor)} />}
 
       <Text
         type={type}
@@ -48,13 +49,7 @@ export function Button({
         {text}
       </Text>
 
-      {rightIcon && (
-        <Icon
-          name={rightIcon}
-          size={24}
-          color={disabled ? theme.colors.subtext : outline ? theme.colors[type] : theme.colors.white}
-        />
-      )}
+      {rightIcon && <Icon name={rightIcon} size={24} color={String(setIconColor)} />}
     </Container>
   )
 }

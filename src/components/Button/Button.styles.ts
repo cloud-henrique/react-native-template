@@ -20,10 +20,18 @@ interface MyTextProps extends TextProps {
 
 export const Container = styled.TouchableOpacity<ContainerProps>`
   align-items: center;
-  background-color: ${({ theme, disabled, outline, type = 'primary' }) =>
-    outline ? 'transparent' : disabled ? theme.colors.disable : theme.colors[type]};
-  border: ${({ theme, disabled, outline, type = 'primary' }) =>
-    outline ? (disabled ? `1px solid ${theme.colors.disable}` : `1px solid ${theme.colors[type]}`) : 'none'};
+  background-color: ${({ theme, disabled, outline, type = 'primary' }) => {
+    const { colors } = theme
+    if (outline) return 'transparent'
+    if (disabled) return colors.disable
+    return colors[type]
+  }};
+
+  border: ${({ theme, disabled, outline, type = 'primary' }) => {
+    if (disabled) return `1px solid ${theme.colors.disable}`
+    if (outline) return `1px solid ${theme.colors[type]}`
+    return 'none'
+  }};
   border-radius: 8px;
   flex-direction: row;
   height: 56px;
@@ -33,11 +41,15 @@ export const Container = styled.TouchableOpacity<ContainerProps>`
 `
 
 export const Text = styled.Text<MyTextProps>`
-  color: ${({ theme, disabled, outline, type = 'primary' }) =>
-    disabled ? theme.colors.subtext : outline ? theme.colors[type] : theme.colors.white};
+  color: ${({ theme, disabled, outline, type = 'primary' }) => {
+    const { colors } = theme
+    if (disabled) return colors.subtext
+    if (outline) return colors[type]
+    return colors.white
+  }};
   font-family: ${({ theme }) => theme.fonts[500]};
   font-size: ${({ theme }) => theme.sizing[18]};
-  margin-left: ${({ leftIcon }) => (!!leftIcon ? '4px' : '0px')};
-  margin-right: ${({ rightIcon }) => (!!rightIcon ? '4px' : '0px')};
+  margin-left: ${({ leftIcon }) => (leftIcon ? '4px' : '0px')};
+  margin-right: ${({ rightIcon }) => (rightIcon ? '4px' : '0px')};
   text-transform: ${({ uppercase }) => (uppercase ? 'uppercase' : 'none')};
 `

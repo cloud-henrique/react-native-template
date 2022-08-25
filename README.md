@@ -14,4 +14,5 @@ This repository contains a personal basic set to init a bare React Native projec
 - [x] [styled-components](https://styled-components.com)
 - [x] Dark and Light theme
 - [x] `Button` and `Input` components
+- [x] ESLint
 - [ ] Internationalization ([i18n-js](https://www.npmjs.com/package/i18n-js))
